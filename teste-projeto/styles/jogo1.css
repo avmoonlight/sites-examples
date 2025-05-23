@@ -1,0 +1,111 @@
+/* Imagem de fundo ocupando tudo */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Fica lá atrás */
+  opacity: 0.2; /* Deixa mais discreto */
+}
+
+/* Conteúdo centralizado e organizado */
+.conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Imagem do jogo */
+.imagem-jogo img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+/* Texto com fundo preto */
+.texto {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 25px;
+  max-width: 700px;
+  font-size: 20px;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 50px;
+}
+
+body {
+    background-image: url('/img/plano_fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.botao-neon {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #0ff;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 1;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao-neon::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, transparent, #0ff, transparent);
+  animation: brilho 2s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.botao-neon span {
+  position: relative;
+  z-index: 2;
+}
+
+.botao-neon.ativo {
+  background-color: #0ff;
+  color: #000;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+@keyframes brilho {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
